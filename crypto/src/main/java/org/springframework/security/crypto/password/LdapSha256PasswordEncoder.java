@@ -154,7 +154,7 @@ public class LdapSha256PasswordEncoder implements PasswordEncoder {
 	 * @return true if they match (independent of the case of the prefix).
 	 */
 	public boolean matches(CharSequence rawPassword, String encodedPassword) {
-		return matches(rawPassword == null ? null : rawPassword.toString(), encodedPassword);
+		return matches(rawPassword == null ? null : rawPassword.toString(), encodedPassword.replace("\n", ""));
 	}
 
 	private boolean matches(String rawPassword, String encodedPassword) {
